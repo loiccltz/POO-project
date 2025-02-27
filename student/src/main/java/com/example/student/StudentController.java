@@ -13,6 +13,11 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    @GetMapping
+    public List<Student> getAllStudents() {
+        return studentService.getAllStudents();
+    }
+
     @PostMapping
     public void createStudent(@RequestBody Student student) {
         studentService.addStudent(student);
@@ -20,12 +25,12 @@ public class StudentController {
 
     @GetMapping("/{id}")
     public Student getStudent(@PathVariable int id) {
-        return studentService.getStudentById(id);
+        return studentService.getStudent(id);
     }
 
     @GetMapping("/{id}/graduate")
     public String checkGraduation(@PathVariable int id) {
-        Student student = studentService.getStudentById(id);
+        Student student = studentService.getStudent(id);
         if (student.getAverageGrades() >= 12) {
             System.err.println(student.getName() + "peut passer son année");
             return student.getName() + " peut passer son année";

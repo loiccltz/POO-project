@@ -42,7 +42,7 @@ public class CourseController {
     @PostMapping("/{studentId}/{courseCode}")
     public Course enrollStudent(@PathVariable int studentId, @PathVariable int courseCode) {
     
-        Student student = studentService.getStudentById(studentId);
+        Student student = studentService.getStudent(studentId);
 
     
         Course course = null;

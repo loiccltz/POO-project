@@ -2,7 +2,7 @@ package com.example.student;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student extends Person{
     private String name;
     private int StudentID;
     private int age;
@@ -29,30 +29,25 @@ public class Student {
         return this.grades;
     }
 
-    public Student() {
-        this.name = "Pierre";
-        this.age = 17;
+       public Student() {
+        super("Pierre", 17);
         this.StudentID = 1;
-        this.grades = new ArrayList<Integer>();
+        this.grades = new ArrayList<>();
     }
 
-
     public Student(String name, int age, int studentID) {
-        this.name = name;
-        this.age = age;
+        super(name, age); 
         this.StudentID = studentID;
         this.grades = new ArrayList<>();
     }
 
-
     public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.grades = new ArrayList<>();
     }
 
 
-
+    
     public ArrayList<Integer> addGrade(int grade){
 
         grades.add(grade);
@@ -73,6 +68,7 @@ public class Student {
 
         return  moyenne;
     }
+
 
     public static void main(String[] args) {
     Student eleve = new Student("loic", 40, 1);
