@@ -25,7 +25,7 @@ public class CourseController {
 
     @GetMapping
     public List<Course> getAllCourse() {
-        return courses; // Retourne tous les étudiants
+        return courses;
     }
 
     @GetMapping("/{id}")
@@ -54,7 +54,7 @@ public class CourseController {
         }
 
         if (course == null) {
-            System.out.println("La matière avec le code " + courseCode + " n'a pas été trouvée.");
+            System.out.println("La matière avec le code " + courseCode + " n'a pas ete trouvée.");
             return null; 
         }
 
@@ -63,7 +63,7 @@ public class CourseController {
         for (int i = 0; i < enrolledStudents.size(); i++) {
             if (enrolledStudents.get(i).getStudentID() == studentId) {
                 System.out.println("L'etudiant avec l'ID " + studentId + " est deja inscrit dans ce cours.");
-                return course; // On retourne le cours sans modifier la liste
+                return course; // on retourne pour avoir un visuel sur postman
             }
         }
 

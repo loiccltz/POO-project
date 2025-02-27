@@ -37,6 +37,14 @@ public class Student {
     }
 
 
+    public Student(String name, int age, int studentID) {
+        this.name = name;
+        this.age = age;
+        this.StudentID = studentID;
+        this.grades = new ArrayList<>();
+    }
+
+
     public Student(String name, int age) {
         this.name = name;
         this.age = age;

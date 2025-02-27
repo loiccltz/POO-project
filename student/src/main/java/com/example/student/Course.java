@@ -34,21 +34,20 @@ public class Course {
     }
     
 
-      // Méthode pour ajouter un étudiant au cours
       public void addStudent(Student student) {
         students.add(student);
     }
 
     public void enrollStudent(Student student) {
-        students.add(student); // Ajoute l'objet Student à la liste
+        students.add(student); 
         System.out.println("Étudiant " + student.getName() + " ajouté au cours " + courseName);
     }
 
     public List<Student> getEnrolledStudents() {
         if (students.isEmpty()) {
-            System.out.println("Aucun étudiant n'est inscrit au cours " + courseName);
+            System.out.println("Aucun étudiant n'est inscrit au cours de " + courseName);
         } else {
-            System.out.println("Étudiants inscrits au cours " + courseName + " :");
+            System.out.println("Etudiants inscrits au cours de " + courseName + " :");
             for (Student student : students) {
                 System.out.println("- " + student.getName() + " (ID: " + student.getStudentID() + ")");
             }

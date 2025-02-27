@@ -27,9 +27,11 @@ public class StudentController {
     public String checkGraduation(@PathVariable int id) {
         Student student = studentService.getStudentById(id);
         if (student.getAverageGrades() >= 12) {
-            return student.getName() + " is eligible for graduation!";
+            System.err.println(student.getName() + "peut passer son année");
+            return student.getName() + " peut passer son année";
         } else {
-            return student.getName() + " is not eligible for graduation.";
+            System.err.println(student.getName() + "ne peut pas passer son année");
+            return student.getName() + "ne peut pas passer son année";
         }
     }
 }
